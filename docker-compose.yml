@@ -1,0 +1,17 @@
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: estoque_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: estoque
+      POSTGRES_PASSWORD: estoque123
+      POSTGRES_DB: sistema_estoque
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
