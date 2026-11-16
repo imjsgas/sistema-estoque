@@ -170,3 +170,32 @@ Teste da funcionalidade de exclusão de produtos.
 **Critério de aceitação:**
 O produto excluído deixa de aparecer na listagem
 e é removido do banco de dados.
+
+
+## 11. Testes finais do sistema
+
+Os testes foram realizados utilizando o frontend React,
+o backend Express e o banco PostgreSQL.
+
+| Funcionalidade | Resultado |
+|---|---|
+| Cadastro de produtos | Aprovado |
+| Edição de produtos | Aprovado |
+| Exclusão de produtos | Aprovado |
+| Pesquisa por nome | Aprovado |
+| Alerta de estoque baixo | Aprovado |
+| Atualização dos indicadores | Aprovado |
+
+### Correção realizada durante os testes
+
+Foi identificado que a edição de produtos não aceitava
+preços digitados com vírgula, como 119,90.
+
+A conversão do preço foi ajustada para substituir
+a vírgula por ponto antes de transformar o texto
+em número.
+
+A mesma correção foi aplicada ao cadastro de produtos.
+
+Após os ajustes, a edição foi testada com sucesso
+utilizando preços com vírgula.
