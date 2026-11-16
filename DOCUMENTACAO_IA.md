@@ -1,0 +1,117 @@
+
+# Documentação do Uso de Inteligência Artificial
+
+## 1. Objetivo
+
+Este documento registra como a inteligência artificial foi utilizada
+no desenvolvimento do Sistema de Gerenciamento de Estoque.
+
+A IA auxiliou na configuração do ambiente, na implementação do sistema,
+na resolução de problemas e nos testes das funcionalidades.
+
+## 2. Ferramenta utilizada
+
+- Ferramenta: ChatGPT (OpenAI)
+- Linguagens: JavaScript, JSX, CSS e SQL por meio do Prisma
+- Finalidade: Apoio ao desenvolvimento e explicação dos códigos
+
+## 3. Tecnologias do projeto
+
+- Frontend: React com Vite
+- Backend: Node.js e Express
+- Banco de dados: PostgreSQL 16
+- ORM: Prisma
+- Containerização: Docker Compose
+- Versionamento: Git e GitHub
+
+## 4. Registro da utilização da IA
+
+A tabela abaixo resume as orientações utilizadas durante o projeto.
+Os prompts estão resumidos e deverão ser complementados com as
+mensagens literais da conversa para atender à exigência do professor.
+
+| Requisito | Solicitação à IA (resumo) | Refinamentos | Decisão de engenharia | Critério de aceitação |
+|---|---|---|---|---|
+| Configuração inicial | Orientação para configurar Node.js, Git e Docker | Testes das ferramentas | Node.js 24 | Ferramentas funcionando |
+| Backend | Orientação para configurar Express | Testes no navegador | API REST com Express | Servidor acessível na porta 3000 |
+| Banco de dados | Orientação para configurar PostgreSQL | Testes de conexão | PostgreSQL 16 no Docker | Banco acessível |
+| Prisma | Orientação para integrar Prisma ao PostgreSQL | Ajuste do schema | Prisma ORM | Tabela Produto criada |
+| Cadastro | Orientação para criar cadastro de produtos | Testes com produtos reais | Rota POST | Produto salvo no banco |
+| Listagem | Orientação para listar produtos | Integração com React | Rota GET | Produtos exibidos na tabela |
+| Edição | Orientação para editar produtos | Testes dos campos | Rota PUT | Dados atualizados |
+| Exclusão | Orientação para excluir produtos | Confirmação de exclusão | Rota DELETE | Produto removido |
+| Pesquisa | Orientação para pesquisar pelo nome | Filtragem em tempo real | Filtro no React | Pesquisa funcionando |
+| Estoque baixo | Orientação para destacar estoque baixo | Testes com diferentes quantidades | Limite de 5 unidades | Aviso vermelho exibido |
+| Painel de resumo | Orientação para criar indicadores | Cálculo dos totais | React | Indicadores atualizados |
+
+## 5. Problemas encontrados e soluções
+
+### Problema 1 — Estilos da interface
+
+O título da página apresentava letras sobrepostas.
+
+Solução: ajustar os arquivos index.css e App.css,
+removendo conflitos com os estilos iniciais do Vite.
+
+### Problema 2 — Produtos não apareciam na tabela
+
+O React exibia apenas o texto indicando onde a lista apareceria.
+
+Solução: implementar a busca dos produtos com fetch,
+armazenar os resultados no estado e renderizar a tabela.
+
+### Problema 3 — Configuração do Prisma
+
+O Prisma foi inicializado com uma configuração de gerador
+diferente da utilizada no projeto.
+
+Solução: configurar o gerador prisma-client-js.
+
+### Problema 4 — Banco sem tabelas
+
+O comando prisma db pull retornou o erro P4001.
+
+Solução: criar o modelo Produto e executar uma migração
+para criar a tabela no PostgreSQL.
+
+## 6. Testes realizados
+
+- Inicialização do backend Express.
+- Conexão com PostgreSQL.
+- Cadastro de produtos.
+- Listagem de produtos.
+- Edição de produtos.
+- Exclusão de produtos.
+- Pesquisa pelo nome.
+- Identificação de estoque baixo.
+- Atualização automática do painel de resumo.
+- Reinicialização do sistema após desligar o computador.
+
+## 7. Funcionalidades implementadas
+
+- Cadastro de produtos.
+- Listagem de produtos.
+- Edição de produtos.
+- Exclusão de produtos.
+- Pesquisa por nome.
+- Controle de estoque.
+- Alertas de estoque baixo.
+- Painel com indicadores de estoque.
+
+## 8. Melhorias futuras
+
+- Melhorar a interface visual.
+- Implementar filtros por categoria.
+- Aprimorar as validações.
+- Adicionar testes automatizados.
+
+## 9. Considerações finais
+
+A inteligência artificial foi utilizada como ferramenta de apoio
+durante o desenvolvimento.
+
+As orientações foram aplicadas e verificadas por meio de testes
+práticos no sistema.
+
+Este documento deverá ser atualizado com os prompts exatos
+e com novas decisões tomadas durante o projeto.
