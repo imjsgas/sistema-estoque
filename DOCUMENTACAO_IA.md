@@ -123,14 +123,17 @@ e com novas decisões tomadas durante o projeto.
 Os textos entre aspas abaixo são mensagens reais enviadas
 ao ChatGPT durante o desenvolvimento do projeto.
 
+
 ### Registro 1 — Início do projeto
 
-**Prompt exato:**
-"Quero desenvolver um sistema de gerenciamento de estoque. Vamos continuar o trabalho passo a passo, começando pela primeira etapa."
+**Descrição da solicitação:**
+Desenvolvimento de um Sistema de Gerenciamento de Estoque
+com orientação passo a passo utilizando o ChatGPT.
 
-**Decisão de engenharia:**
-Desenvolver o sistema por etapas, configurando primeiro
-o ambiente e depois implementando suas funcionalidades.
+**Observação:**
+Este registro resume a solicitação inicial.
+Não é uma transcrição literal do prompt original.
+
 
 ### Registro 2 — Organização do ambiente
 
@@ -170,6 +173,34 @@ Teste da funcionalidade de exclusão de produtos.
 **Critério de aceitação:**
 O produto excluído deixa de aparecer na listagem
 e é removido do banco de dados.
+
+
+### Registro 5 — Problema na edição de preços
+
+**Prompt exato:**
+"ou o problema pode ser o valor, se colocar virgula ao inves de ponto ele n atualiza"
+
+**Problema identificado:**
+A edição funcionava com preços digitados com ponto,
+mas não com vírgula.
+
+**Refinamento realizado:**
+Foi identificada a conversão do preço utilizando Number().
+
+**Decisão de engenharia:**
+Substituir a vírgula por ponto antes de converter o preço
+para número.
+
+**Código utilizado:**
+```javascript
+const precoNumero = Number(novoPreco.replace(",", "."));
+```
+
+**Critério de aceitação:**
+A edição deve aceitar preços como 119,90 e 119.90.
+
+**Resultado:**
+Correção implementada e testada com sucesso.
 
 
 ## 11. Testes finais do sistema
