@@ -9,6 +9,18 @@ function App() {
   const [estoque, setEstoque] = useState("");
   const [mensagem, setMensagem] = useState("");
   const [produtos, setProdutos] = useState([]);
+
+const totalProdutos = produtos.length;
+
+const totalUnidades = produtos.reduce(
+  (total, produto) => total + produto.estoque,
+  0
+);
+
+const produtosEstoqueBaixo = produtos.filter(
+  (produto) => produto.estoque <= 5
+).length;
+
   const [pesquisa, setPesquisa] = useState("");
 
   async function carregarProdutos() {
@@ -161,6 +173,24 @@ async function editarProduto(produto) {
     <div className="container">
       <h1>Sistema de Gerenciamento de Estoque</h1>
       <p>Controle seus produtos de forma simples.</p>
+
+<div className="painel-resumo">
+  <div className="card-resumo">
+    <h3>Produtos Cadastrados</h3>
+    <strong>{totalProdutos}</strong>
+  </div>
+
+  <div className="card-resumo">
+    <h3>Unidades em Estoque</h3>
+    <strong>{totalUnidades}</strong>
+  </div>
+
+  <div className="card-resumo alerta">
+    <h3>Estoque Baixo</h3>
+    <strong>{produtosEstoqueBaixo}</strong>
+  </div>
+</div>
+
 
       <h2>Cadastro de Produtos</h2>
 

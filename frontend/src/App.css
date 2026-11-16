@@ -101,3 +101,45 @@ tr:nth-child(even) {
   color: #15803d;
   font-weight: bold;
 }
+
+.painel-resumo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.card-resumo {
+  background-color: #eff6ff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #bfdbfe;
+}
+
+.card-resumo h3 {
+  font-size: 15px;
+  color: #334155;
+  margin: 0 0 12px;
+}
+
+.card-resumo strong {
+  display: block;
+  font-size: 32px;
+  color: #2563eb;
+}
+
+.card-resumo.alerta {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+}
+
+.card-resumo.alerta strong {
+  color: #dc2626;
+}
+
+@media (max-width: 650px) {
+  .painel-resumo {
+    grid-template-columns: 1fr;
+  }
+}
