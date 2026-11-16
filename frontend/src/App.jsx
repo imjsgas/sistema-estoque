@@ -55,7 +55,7 @@ const produtosEstoqueBaixo = produtos.filter(
         body: JSON.stringify({
           nome: nome.trim(),
           categoria: categoria.trim(),
-          preco: Number(preco),
+          preco: Number(preco.replace(",", ".")),
           estoque: Number(estoque)
         })
       });
@@ -122,7 +122,7 @@ async function editarProduto(produto) {
   const novoEstoque = window.prompt("Estoque:", produto.estoque);
   if (novoEstoque === null) return;
 
-  const precoNumero = Number(novoPreco);
+  const precoNumero = Number(novoPreco.replace(",", "."));
   const estoqueNumero = Number(novoEstoque);
 
   if (
