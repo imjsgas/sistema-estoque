@@ -115,3 +115,58 @@ práticos no sistema.
 
 Este documento deverá ser atualizado com os prompts exatos
 e com novas decisões tomadas durante o projeto.
+
+
+
+## 10. Registro de prompts exatos utilizados
+
+Os textos entre aspas abaixo são mensagens reais enviadas
+ao ChatGPT durante o desenvolvimento do projeto.
+
+### Registro 1 — Início do projeto
+
+**Prompt exato:**
+"Quero desenvolver um sistema de gerenciamento de estoque. Vamos continuar o trabalho passo a passo, começando pela primeira etapa."
+
+**Decisão de engenharia:**
+Desenvolver o sistema por etapas, configurando primeiro
+o ambiente e depois implementando suas funcionalidades.
+
+### Registro 2 — Organização do ambiente
+
+**Prompt exato:**
+"ok o arquivo foi criado, só estou tendo uma confusao com o powershell do windows e o powershell do vs code, para facilitar, avise qual é qual antes de passar as instruçoes"
+
+**Refinamento:**
+As instruções passaram a identificar o terminal correto.
+
+**Decisão de engenharia:**
+Utilizar o terminal integrado do VS Code para executar
+os comandos do projeto.
+
+### Registro 3 — Problemas na interface React
+
+**Prompt exato:**
+"nao, nao apareceu na tabela do react, e as letras estao um pouco sobrepostas"
+
+**Problema:**
+Os produtos não apareciam corretamente na tabela
+e havia conflitos de estilo na interface.
+
+**Refinamento:**
+Corrigir a renderização dos produtos e os arquivos CSS.
+
+**Critério de aceitação:**
+Produtos visíveis na tabela e textos sem sobreposição.
+
+### Registro 4 — Teste de exclusão
+
+**Prompt exato:**
+"eu exclui o teclado mecanico"
+
+**Contexto:**
+Teste da funcionalidade de exclusão de produtos.
+
+**Critério de aceitação:**
+O produto excluído deixa de aparecer na listagem
+e é removido do banco de dados.
