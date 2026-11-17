@@ -1,9 +1,14 @@
+
 # Sistema de Gerenciamento de Estoque
 
 ## Descrição
 
-Sistema web desenvolvido para gerenciar produtos e controlar o estoque de uma empresa.
+Sistema web desenvolvido para gerenciar produtos e
+controlar o estoque de uma empresa.
 
+Projeto acadêmico da disciplina de Laboratório de
+Programação, desenvolvido com auxílio de inteligência
+artificial.
 
 ## Funcionalidades implementadas
 
@@ -12,7 +17,7 @@ Sistema web desenvolvido para gerenciar produtos e controlar o estoque de uma em
 - Edição de produtos
 - Exclusão de produtos
 - Pesquisa de produtos por nome
-- Controle de quantidade em estoque
+- Controle da quantidade em estoque
 - Identificação de produtos com estoque baixo
 - Painel com total de produtos cadastrados
 - Painel com quantidade total de unidades
@@ -21,65 +26,131 @@ Sistema web desenvolvido para gerenciar produtos e controlar o estoque de uma em
 ## Tecnologias utilizadas
 
 - React e Vite
-- Node.js e Express
+- Node.js 24 e Express
+- Nodemon
 - PostgreSQL 16
 - Prisma ORM
 - Docker Compose
 - Git e GitHub
-
-## Status do projeto
-
-CRUD completo e funcional.
-
-O frontend React está integrado ao backend Express, que utiliza Prisma para acessar o banco de dados PostgreSQL.
-
-
-## Tecnologias
-
-- **Frontend:** React
-- **Backend:** Node.js e Express
-- **Banco de dados:** PostgreSQL
-- **ORM:** Prisma
-- **Containerização:** Docker
-- **Controle de versão:** Git e GitHub
-
-## Status do projeto
-
-Em desenvolvimento.
-
-O backend inicial já está configurado com Express e nodemon.
+- GitHub Projects (Kanban)
 
 ## Estrutura do projeto
 
 ```text
 sistema-estoque/
 ├── backend/
+│   ├── prisma/
+│   │   └── schema.prisma
 │   ├── server.js
+│   ├── package.json
+│   └── .env
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── index.css
 │   └── package.json
 ├── .gitignore
-└── README.md
+├── docker-compose.yml
+├── README.md
+└── DOCUMENTACAO_IA.md
 ```
 
-*Estrutura simplificada, que será atualizada durante o desenvolvimento.*
+Observação: o arquivo .env contém configurações locais
+e não deve ser enviado ao GitHub.
+
+## Como executar o projeto
+
+### 1. Requisitos
+
+É necessário ter instalado:
+
+- Node.js 22, 23 ou 24
+- Docker Desktop
+- Git
+
+### 2. Iniciar o banco de dados
+
+Abra o terminal na pasta principal do projeto:
+
+```powershell
+docker compose up -d
+```
+
+### 3. Iniciar o backend
+
+Abra outro terminal:
+
+```powershell
+cd backend
+npm.cmd install
+npx.cmd prisma generate
+npx.cmd prisma migrate deploy
+npm.cmd run dev
+```
+
+O backend estará disponível em:
+
+http://localhost:3000
+
+A rota de listagem de produtos estará disponível em:
+
+http://localhost:3000/produtos
+
+### 4. Iniciar o frontend
+
+Abra outro terminal na pasta principal do projeto:
+
+```powershell
+cd frontend
+npm.cmd install
+npm.cmd run dev
+```
+
+Acesse no navegador:
+
+http://localhost:5173
+
+### 5. Configuração do banco de dados
+
+O PostgreSQL é executado por meio do Docker Compose.
+
+O backend utiliza um arquivo .env com a variável
+DATABASE_URL para se conectar ao banco.
+
+É necessário configurar essa variável antes de
+executar as migrações do Prisma.
+
+## Arquitetura
+
+O frontend React realiza requisições HTTP para
+a API desenvolvida com Node.js e Express.
+
+O backend utiliza o Prisma ORM para acessar
+o banco de dados PostgreSQL.
+
+O Docker Compose é responsável por inicializar
+o banco de dados localmente.
+
+## Documentação de IA
+
+As interações com inteligência artificial,
+os refinamentos realizados e as decisões
+de engenharia estão registrados no arquivo:
+
+DOCUMENTACAO_IA.md
+
+## Gestão do projeto
+
+As tarefas foram organizadas utilizando
+o GitHub Projects, com um quadro Kanban.
 
 ## Equipe
 
-Projeto acadêmico desenvolvido em dupla.
+Projeto acadêmico desenvolvido individualmente.
 
-## Execução do backend
+## Status do projeto
 
-Na pasta `backend`, instale as dependências:
-
-```bash
-npm install
-```
-
-Inicie o servidor em modo de desenvolvimento:
-
-```bash
-npm run dev
-```
-
-Acesse:
-
-http://localhost:3000
+Sistema funcional, com operações CRUD,
+pesquisa por nome, alertas de estoque baixo
+e painel de indicadores.
