@@ -230,3 +230,55 @@ A mesma correção foi aplicada ao cadastro de produtos.
 
 Após os ajustes, a edição foi testada com sucesso
 utilizando preços com vírgula.
+
+
+## 12. Análise das interações com IA
+
+| Problema / Requisito | Prompts utilizados (texto exato) | Refinamento (iterações) | Decisão de engenharia |
+|---|---|---|---|
+| Edição de preços com vírgula | "ou o problema pode ser o valor, se colocar virgula ao inves de ponto ele n atualiza" | Foi identificado que Number() não convertia corretamente preços com vírgula. A conversão foi ajustada e testada novamente. | Utilizar replace(",", ".") antes de Number(), permitindo os formatos 119,90 e 119.90. |
+
+
+| Produtos não apareciam na tabela React e havia sobreposição de textos | "nao, nao apareceu na tabela do react, e as letras estao um pouco sobrepostas" | Foi necessário revisar a exibição dos produtos e corrigir conflitos entre os arquivos CSS. | Utilizar o estado do React para renderizar a lista de produtos e ajustar os estilos para manter a interface legível. |
+
+
+| Dificuldade para identificar o terminal correto | "ok o arquivo foi criado, só estou tendo uma confusao com o powershell do windows e o powershell do vs code, para facilitar, avise qual é qual antes de passar as instruçoes" | As instruções passaram a indicar explicitamente qual terminal utilizar em cada etapa. | Padronizar a execução dos comandos no PowerShell integrado ao VS Code, facilitando a configuração e a manutenção do ambiente. |
+
+
+## 13. Justificativa das decisões de arquitetura
+
+### Frontend — React
+
+O React foi utilizado para desenvolver a interface,
+organizar os componentes e atualizar a listagem de
+produtos e os indicadores de estoque.
+
+### Backend — Node.js e Express
+
+O Express foi escolhido para implementar a API REST,
+responsável pelas operações de cadastro, consulta,
+edição e exclusão de produtos.
+
+### Banco de dados — PostgreSQL
+
+O PostgreSQL foi utilizado para armazenar os dados
+dos produtos de forma persistente.
+
+### Docker Compose
+
+O Docker Compose foi utilizado para configurar e
+inicializar o banco de dados em um contêiner,
+facilitando a execução local do projeto.
+
+### Prisma ORM
+
+O Prisma foi utilizado para realizar as operações
+no banco de dados e gerenciar o modelo Produto
+e suas migrações.
+
+### GitHub Projects
+
+O GitHub Projects foi utilizado para organizar as
+tarefas em um quadro Kanban, acompanhando as
+atividades concluídas e pendentes.
+
