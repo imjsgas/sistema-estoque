@@ -111,46 +111,31 @@ Acesse no navegador:
 
 http://localhost:5173
 
+
 ### 5. Configuração do banco de dados
 
-O PostgreSQL é executado por meio do Docker Compose.
+O PostgreSQL é executado utilizando Docker Compose.
 
-O backend utiliza um arquivo .env com a variável
-DATABASE_URL para se conectar ao banco.
+Antes de iniciar o backend pela primeira vez, é necessário
+configurar o arquivo de variáveis de ambiente.
 
-É necessário configurar essa variável antes de
-executar as migrações do Prisma.
+1. Entre na pasta `backend`.
+2. Copie o arquivo `.env.example`.
+3. Renomeie a cópia para `.env`.
+4. Confira se a variável `DATABASE_URL` corresponde
+   às configurações do PostgreSQL no `docker-compose.yml`.
 
-## Arquitetura
+Depois, na pasta `backend`, execute:
 
-O frontend React realiza requisições HTTP para
-a API desenvolvida com Node.js e Express.
+```powershell
+npm.cmd install
+npx.cmd prisma generate
+npx.cmd prisma migrate deploy
+npm.cmd run dev
+```
 
-O backend utiliza o Prisma ORM para acessar
-o banco de dados PostgreSQL.
+O arquivo `.env` contém a configuração local e não
+deve ser enviado ao GitHub.
 
-O Docker Compose é responsável por inicializar
-o banco de dados localmente.
-
-## Documentação de IA
-
-As interações com inteligência artificial,
-os refinamentos realizados e as decisões
-de engenharia estão registrados no arquivo:
-
-DOCUMENTACAO_IA.md
-
-## Gestão do projeto
-
-As tarefas foram organizadas utilizando
-o GitHub Projects, com um quadro Kanban.
-
-## Equipe
-
-Projeto acadêmico desenvolvido individualmente.
-
-## Status do projeto
-
-Sistema funcional, com operações CRUD,
-pesquisa por nome, alertas de estoque baixo
-e painel de indicadores.
+O arquivo `.env.example` contém apenas um exemplo
+de configuração para o ambiente de desenvolvimento.
